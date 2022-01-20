@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showBottomSheet(){
         BottomSheetDialog bottomSheetDialog=new BottomSheetDialog(MainActivity.this);
-        View bottomSheetView= LayoutInflater.from(getApplicationContext()).inflate(R.layout.score_bottom_sheet,(ConstraintLayout)findViewById(R.id.idLLScore));
+        View bottomSheetView=LayoutInflater.from(getApplicationContext()).inflate(R.layout.score_bottom_sheet,(ConstraintLayout)findViewById(R.id.idLLScore));
         TextView score=bottomSheetView.findViewById(R.id.score);
         Button restartQuiz=bottomSheetView.findViewById(R.id.restart);
         score.setText("Your Score is \n"+currentScore+"/5");
