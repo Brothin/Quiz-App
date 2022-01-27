@@ -18,7 +18,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private TextView question,questionNumber;
-    private Button option1Btn,option2Btn,option3Btn,option4Btn;
+    private Button option1Btn,option2Btn,option3Btn,option4Btn,nextBtn;
     private ArrayList<QuizModal> arrayList;
     Random random;
     int currentScore=0,questionAttempted=0,currentPos;
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         option2Btn=findViewById(R.id.Btn_Option2);
         option3Btn=findViewById(R.id.Btn_Option3);
         option4Btn=findViewById(R.id.Btn_Option4);
+        nextBtn=findViewById(R.id.Btn_next);
         arrayList=new ArrayList<>();
         random=new Random();
         getQuizQuestion(arrayList);
@@ -45,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(arrayList.get(currentPos).getAnswer().trim().toLowerCase().equals(option1Btn.getText().toString().trim().toLowerCase()))
                 {
+                    option1Btn.setBackgroundColor(getResources().getColor(R.color.teal_200));
                     currentScore++;
                 }
+                else{
+                    option1Btn.setBackgroundColor(getResources().getColor(R.color.red));
+                }
                 questionAttempted++;
-                currentPos=random.nextInt(arrayList.size());
-                setDataToViews(currentPos);
             }
         });
 
@@ -58,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(arrayList.get(currentPos).getAnswer().trim().toLowerCase().equals(option2Btn.getText().toString().trim().toLowerCase()))
                 {
+                    option2Btn.setBackgroundColor(getResources().getColor(R.color.teal_200));
                     currentScore++;
+                }else{
+                    option2Btn.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 questionAttempted++;
-                currentPos=random.nextInt(arrayList.size());
-                setDataToViews(currentPos);
             }
         });
 
@@ -71,11 +75,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(arrayList.get(currentPos).getAnswer().trim().toLowerCase().equals(option3Btn.getText().toString().trim().toLowerCase()))
                 {
+                    option3Btn.setBackgroundColor(getResources().getColor(R.color.teal_200));
                     currentScore++;
+                }else{
+                    option3Btn.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 questionAttempted++;
-                currentPos=random.nextInt(arrayList.size());
-                setDataToViews(currentPos);
             }
         });
 
@@ -84,9 +89,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(arrayList.get(currentPos).getAnswer().trim().toLowerCase().equals(option4Btn.getText().toString().trim().toLowerCase()))
                 {
+                    option4Btn.setBackgroundColor(getResources().getColor(R.color.teal_200));
                     currentScore++;
+                }else{
+                    option4Btn.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 questionAttempted++;
+            }
+        });
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                option1Btn.setBackgroundColor(getResources().getColor(R.color.purple));
+                option2Btn.setBackgroundColor(getResources().getColor(R.color.purple));
+                option3Btn.setBackgroundColor(getResources().getColor(R.color.purple));
+                option4Btn.setBackgroundColor(getResources().getColor(R.color.purple));
                 currentPos=random.nextInt(arrayList.size());
                 setDataToViews(currentPos);
             }
@@ -134,5 +152,10 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new QuizModal("Which country has highest energy usage per capita?","Qatar","Kuwait","Iceland","United Arab emirates","Iceland"));
         arrayList.add(new QuizModal("LNG stands for?","Liquid natural gas","Liquefied natural gas","Low nitrogen content gas","Liquid nitrogen gas","Liquefied natural gas"));
         arrayList.add(new QuizModal("The main objective of energy management is to?","Minimize energy cost","Minimize environmental effects","Maintain optimum energy procurement and utilization","All of these","All of these"));
+        arrayList.add(new QuizModal("In the given options, the non-commercial source of energy is?","Refined petroleum products","Coal","Lignite","Firewood","Refined petroleum products"));
+        arrayList.add(new QuizModal("Which country has the biggest coal reserves?","US","China","India","Russia","US"));
+        arrayList.add(new QuizModal(" Which is the major energy source to meet the Indian energy demand?","Oil","Coal","Natural Gas","Lignite","Coal"));
+        arrayList.add(new QuizModal("Maximum demand charges are given in?","kWh","kVAr","KVA","All of these","KVA"));
+        arrayList.add(new QuizModal("Which among the following fuel is not available for thermal enegy supply?","LSHS","LDO","LPG","None of these","None of these"));
     }
 }

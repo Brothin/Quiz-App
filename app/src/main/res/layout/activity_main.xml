@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#06E1FD"
+    android:background="#1FB5F8"
     tools:context=".MainActivity">
 
     <Button
@@ -12,7 +12,7 @@
         android:layout_width="359dp"
         android:layout_height="52dp"
         android:layout_marginTop="52dp"
-        android:background="#2196F3"
+        android:background="#673AB7"
         android:text="Option 1"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="359dp"
         android:layout_height="52dp"
         android:layout_marginTop="336dp"
-        android:background="#2196F3"
+        android:background="#673AB7"
         android:text="Option 4"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
         android:layout_width="359dp"
         android:layout_height="52dp"
         android:layout_marginTop="244dp"
-        android:background="#2196F3"
+        android:background="#673AB7"
         android:text="Option 3"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,10 +75,23 @@
         android:layout_width="359dp"
         android:layout_height="52dp"
         android:layout_marginTop="148dp"
-        android:background="#2196F3"
+        android:background="#673AB7"
         android:text="Option 2"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Question" />
+
+    <Button
+        android:id="@+id/Btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#0BABBF"
+        android:text="NEXT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn_Option4"
+        app:layout_constraintVertical_bias="0.436" />
 </androidx.constraintlayout.widget.ConstraintLayout>
